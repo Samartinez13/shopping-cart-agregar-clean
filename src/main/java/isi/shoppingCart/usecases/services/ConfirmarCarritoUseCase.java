@@ -2,15 +2,14 @@ package isi.shoppingCart.usecases.services;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import isi.shoppingCart.entities.Cart;
+import isi.shoppingCart.entities.Product;
+import isi.shoppingCart.usecases.ports.CartRepository;
+import isi.shoppingCart.usecases.ports.ProductRepository;
 
-public class ConfirmarCarritoUseCase extends Application {
+public class ConfirmarCarritoUseCase {
+    private Validar
 
-    public static void main(String[] args) {
-        launch(args);
+
     }
 
-    @Override
-    public void start(Stage primaryStage) {
-
-    }
-}
