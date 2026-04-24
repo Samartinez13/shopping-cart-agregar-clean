@@ -11,13 +11,16 @@ public class ShoppingCartApp {
     private ProductRepository productRepository;
     private CartRepository cartRepository;
     private AgregarProductoAlCarritoUseCase agregarProductoAlCarritoUseCase;
+    private ConfirmarCarritoUseCase confirmarCarritoUseCase;
 
     public ShoppingCartApp(ProductRepository productRepository,
                            CartRepository cartRepository,
-                           AgregarProductoAlCarritoUseCase agregarProductoAlCarritoUseCase) {
+                           AgregarProductoAlCarritoUseCase agregarProductoAlCarritoUseCase,
+                           ConfirmarCarritoUseCase confirmarCarritoUseCase) {
         this.productRepository = productRepository;
         this.cartRepository = cartRepository;
         this.agregarProductoAlCarritoUseCase = agregarProductoAlCarritoUseCase;
+        this.confirmarCarritoUseCase = confirmarCarritoUseCase;
     }
 
     public List<Product> getCatalogProducts() {
@@ -36,5 +39,8 @@ public class ShoppingCartApp {
 
     public String addProductToCart(int productId) {
         return agregarProductoAlCarritoUseCase.execute(productId);
+    }
+    public String verficarVacio(){
+        return confirmarCarritoUseCase.verificar();
     }
 }
